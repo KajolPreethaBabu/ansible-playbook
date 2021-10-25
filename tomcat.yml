@@ -43,3 +43,7 @@
         dest: /usr/local/tomcat/webapps/host-manager/META-INF/context.xml
     - name: Starting tomcat
       shell: nohup /usr/local/tomcat/bin/startup.sh &
+    - name: Copying .war file to Tomcat server
+      copy:
+        src: /home/ansible/war-file/target/addressbook-2.0.war
+        dest: /usr/local/tomcat/webapps/addressbook-2.0.war
